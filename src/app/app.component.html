@@ -1,20 +1,85 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!--
+The content below is only a placeholder and can be replaced.
+<div class="mdl-layout mdl-js-layout mdl-layout&#45;&#45;fixed-header title-bar">
+  <header class="mdl-layout__header  mdl-color&#45;&#45;primary-dark">
+    <div class="mdl-layout__header-row">
+      &lt;!&ndash; Title &ndash;&gt;
+      <span class="mdl-layout-title">{{title}}</span>
+      &lt;!&ndash; Add spacer, to align navigation to the right &ndash;&gt;
+      <div class="mdl-layout-spacer"></div>
+      &lt;!&ndash; Navigation. We hide it in small screens. &ndash;&gt;
+      <nav class="mdl-navigation mdl-layout&#45;&#45;large-screen-only">
+        <a class="mdl-navigation__link" routerLink="/control-center" routerLinkActive="active">Control Center</a>
+        <a class="mdl-navigation__link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <a class="mdl-navigation__link" routerLink="/admin" routerLinkActive="active">Admin</a>
+        <a class="mdl-navigation__link" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="mdl-navigation__link" [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer" id="adminMenu">
+    <span class="mdl-layout-title">Account</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" routerLink="/control-center" routerLinkActive="active">Control Center</a>
+      <a class="mdl-navigation__link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="mdl-navigation__link" routerLink="/admin" routerLinkActive="active">Admin</a>
+      <a class="mdl-navigation__link" routerLink="/login" routerLinkActive="active">Login</a>
+      <a class="mdl-navigation__link" [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+    </nav>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+-->
+
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header title-bar">
+  <header class="mdl-layout__header  mdl-color--primary-dark">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">{{title}}</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" routerLink="/control-center" routerLinkActive="active">Control Center</a>
+        <a class="mdl-navigation__link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <a class="mdl-navigation__link" routerLink="/admin" routerLinkActive="active">Admin</a>
+        <a class="mdl-navigation__link" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="mdl-navigation__link" [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="heading-drawer mdl-layout__drawer">
+    <header class="heading-drawer-header">
+      <img src="resources/user.jpg" class="heading-avatar">
+      <div class="heading-avatar-dropdown">
+        <span>hello@example.com</span>
+        <div class="mdl-layout-spacer"></div>
+        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+          <i class="material-icons" role="presentation">arrow_drop_down</i>
+          <span class="visuallyhidden">Accounts</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+          <li class="mdl-menu__item">hello@example.com</li>
+          <li class="mdl-menu__item">info@example.com</li>
+          <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+        </ul>
+      </div>
+    </header>
+    <nav class="heading-navigation mdl-navigation">
+      <a class="mdl-navigation__link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="mdl-navigation__link" routerLink="/control-center" routerLinkActive="active">Control Center</a>
+      <a class="mdl-navigation__link" routerLink="/admin" routerLinkActive="active">Admin</a>
+      <a class="mdl-navigation__link" routerLink="/login" routerLinkActive="active">Login</a>
+      <a class="mdl-navigation__link" [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
+    </nav>
+  </div>
+</div>
+
+
+<div style="height: 60px"></div>
+
+<router-outlet></router-outlet>
+<!--<router-outlet name="popup"></router-outlet>-->
+
 

@@ -1,0 +1,13 @@
+<form [formGroup]="gateForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Description:
+      <input class="form-control" formControlName="description">
+    </label>
+    <label class="center-block">Status:
+      <input class="form-control" formControlName="status">
+    </label>
+  </div>
+</form>
+
+<p>Form value: {{ gateForm.value | json }}</p>
+<p>Form status: {{ gateForm.status | json }}</p>

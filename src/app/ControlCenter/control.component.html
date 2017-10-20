@@ -1,0 +1,155 @@
+<div class="">
+  <div style="height: 20px"></div>
+  <div [ngSwitch]="editor" class="container">
+    <div *ngSwitchCase="true">
+      <h1>Add Gate Device</h1>
+      <app-form></app-form>
+    </div>
+    <div *ngSwitchDefault=""></div>
+  </div>`
+
+  <div [ngSwitch]="control_interface" class="">
+    <div *ngSwitchCase="'gates'" class="center">
+      <div class="control-table mdl-card mdl-shadow--2dp center">
+        <div class="mdl-card__title mdl-card--expand">
+          <h3 class="mdl-card__title-text">Gate Control</h3>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <!--Gate Table Data-->
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp center">
+            <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">ID</th>
+              <th class="mdl-data-table__cell--non-numeric">Description</th>
+              <th class="mdl-data-table__cell--non-numeric">Status</th>
+              <th class="mdl-data-table__cell--non-numeric">Schedule - Open</th>
+              <th class="mdl-data-table__cell--non-numeric">Schedule - Close</th>
+              <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric"></th>-->
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr class="text" *ngFor="let item of gates | async;">
+              <td>{{item.id}}</td>
+              <td *ngIf="item.id == editRowId">
+                <input type="text" [(ngModel)]="item.description">
+              </td>
+              <td *ngIf="item.id !== editRowId" (click)="toggleEdit(item.id)">
+                {{item.description}}
+              </td>
+              <td *ngIf="item.id == editRowId">
+                <input type="text" [(ngModel)]="item.status">
+              </td>
+              <td *ngIf="item.id !== editRowId" (click)="toggleEdit(item.id)">
+                {{item.status}}
+              </td>
+              <td>{{item.schedule.open}}</td>
+              <td>{{item.schedule.close}}</td>
+              <td><!-- Accent-colored raised button -->
+                <!--<button (click)="updateData(item)" class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;accent">
+                  Save
+                </button>-->
+              </td>
+            </tr>
+            </tbody>
+            <div>
+
+            </div>
+          </table>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" style="float: left">
+            Info
+          </a>
+          <a (click)="openGateForm()" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" style="float: right">
+            Add
+          </a>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'irrigators'" class="">
+      <!-- irrigators -->
+      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp center">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Description</th>
+          <th>Status</th>
+          <th>Schedule - Start</th>
+          <th>Schedule - Stop</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text" *ngFor="let item of irrigators | async">
+          <td>{{item.description}}</td>
+          <td>{{item.status}}</td>
+          <td>{{item.schedule.open}}</td>
+          <td>{{item.schedule.close}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngSwitchCase="'environmental'" class="">
+      <!-- Environmental-->
+      this
+    </div>
+    <div *ngSwitchCase="'livestock'" class="">
+      <!-- Livestock-->
+      this
+    </div>
+    <div *ngSwitchDefault=""></div>
+  </div>
+
+  <div class="item-card-square mdl-card mdl-shadow--2dp center">
+    <div class="mdl-card__title mdl-card--expand">
+      <h2 class="mdl-card__title-text">Gates</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Monitor and operate gates.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a (click)="toggle('gates')" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Open
+      </a>
+    </div>
+  </div>
+  <div class="item-card-square mdl-card mdl-shadow--2dp center">
+    <div class="mdl-card__title mdl-card--expand">
+      <h2 class="mdl-card__title-text">Irrigation</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Activate and schedule Irrigators
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a (click)="toggle('irrigators')" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Open
+      </a>
+    </div>
+  </div>
+  <div class="item-card-square mdl-card mdl-shadow--2dp center">
+    <div class="mdl-card__title mdl-card--expand">
+      <h2 class="mdl-card__title-text">Environmental</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Weather monitors, Soil conditions
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a (click)="toggle('environmental')" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Open
+      </a>
+    </div>
+  </div>
+  <div class="item-card-square mdl-card mdl-shadow--2dp center">
+    <div class="mdl-card__title mdl-card--expand">
+      <h2 class="mdl-card__title-text">Livestock</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Automatic Feeders, Water supply, tracking.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a (click)="toggle('livestock')" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Open
+      </a>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

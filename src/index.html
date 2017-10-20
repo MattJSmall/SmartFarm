@@ -2,13 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SmartFarmAngular</title>
+  <title>SmartFarm</title>
+<!--  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+  <link rel="stylesheet" href="styles.css" type="text/css">
+
+  <!-- Material Design icon font -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='http://fonts.which is googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
+  <!-- Angular routing definition-->
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+
+
+  <app-root><div class="mdl-spinner mdl-js-spinner is-active"></div></app-root>
+
+
+<!--  <router-outlet> </router-outlet>-->
+
+
+  <footer class="mdl-mega-footer">
+    <div class="mdl-mega-footer--middle-section">
+      <div class="mdl-mega-footer--drop-down-section">
+        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer--heading">Features</h1>
+        <ul class="mdl-mega-footer--link-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Functions</a></li>
+          <li><a href="#">Updates</a></li>
+        </ul>
+      </div>
+      <div class="mdl-mega-footer--drop-down-section">
+        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer--heading">Technology</h1>
+        <ul class="mdl-mega-footer--link-list">
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Spec</a></li>
+          <li><a href="#">Tools</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="mdl-mega-footer--drop-down-section">
+        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer--heading">FAQ</h1>
+        <ul class="mdl-mega-footer--link-list">
+          <li><a href="#">Questions</a></li>
+          <li><a href="#">Answers</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mdl-mega-footer--bottom-section">
+      <div class="mdl-logo">
+        More Information
+      </div>
+      <ul class="mdl-mega-footer--link-list">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy and Terms</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+
+  <script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+
 </body>
 </html>
